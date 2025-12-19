@@ -10,6 +10,7 @@
     <li><a href="orderDrinks.php">Drinks</a></li>
     <li><a href="orderDessert.php">Dessert</a></li>
     <li><a href="orderCheck.php">Order</a></li>
+    <li><a href="orderHistory.php">History</a></li>
     <li><a href="management.php">Management</a></li>
 </ul>
 

@@ -20,7 +20,7 @@ foreach ($items as $item) {
     $name = (string)$item['name'];
     $id = (int)$item["id"];
     $qty = $_SESSION['cart'][$id]['amount'] ?? 0;
-    $filename = "images.jpg";
+    $filename = $name . "jpg";
     echo '<section>';
     echo '<img src="./upfiles/' . $filename . '" alt="">';
     echo '<div>';
