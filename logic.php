@@ -13,5 +13,6 @@ foreach($orders as $order){
     $stmtOrder->bindValue(':amount', $order["amount"], PDO::PARAM_INT);
     $stmtOrder->execute();
 }
-
+$_SESSION["cart"] = [];
+header("Location: index.php");
 ?>

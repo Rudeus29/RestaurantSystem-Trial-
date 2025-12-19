@@ -8,8 +8,7 @@ session_start();
 
 $orders = $_SESSION["cart"];
 $ordername = array_keys($orders);
-print_r($orders);
-echo "</br>";
+
 $x = 0;
 
 ?>
@@ -26,7 +25,7 @@ $x = 0;
 <?php } ?>
 </table>
 <form method="POST" action="logic.php">
-    <button type="submit" name="place_order" value="1" href="index.php">Order</button>
+    <button type="submit" name="place_order" value="1">Order</button>
   </form>
 
 </html>

@@ -8,7 +8,7 @@ if (!isset($_SESSION['cart'])) {
 
 $tableNo = isset($_GET['tableNo']) ? (int) $_GET['tableNo'] : 1;
 
-$sqlItem = "SELECT * FROM smenu WHERE category = 3 ORDER BY id ASC";
+$sqlItem = "SELECT * FROM sitem WHERE category = 3 ORDER BY id ASC";
 $stmtItem = $pdo->prepare($sqlItem);
 $stmtItem->execute();
 $items = $stmtItem->fetchAll(PDO::FETCH_ASSOC);

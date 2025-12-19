@@ -8,7 +8,7 @@ $sql = "
     SELECT m.*, SUM(i.price * o.amount) as totalAmount
     FROM sManagement m
     LEFT JOIN sOrder o ON m.orderNo = o.orderNo
-    LEFT JOIN smenu i ON o.itemNo = i.id
+    LEFT JOIN sitem i ON o.itemNo = i.id
     GROUP BY m.orderNo
     ORDER BY m.state ASC, m.dateB DESC
 ";
