@@ -40,6 +40,10 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <form action="reset_db.php" method="POST" onsubmit="return confirm('sOrderテーブル、sManagementテーブルをTRUNCATEしてリセットします。本当によろしいですか？');" style="display: inline;">
                 <button type="submit" class="btn btn-red" style="font-size: 0.9em; padding: 5px 10px;">初期状態にリセット</button>
             </form>
+        <div class="container">
+        <a href="additem.php" class="btn brand">
+        <button>商品を追加する</button>
+        </a>
         </div>
     </div>
     
