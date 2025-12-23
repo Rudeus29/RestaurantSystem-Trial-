@@ -6,13 +6,13 @@
     <title>
         商品追加
     </title>
-    <link rel="stylesheet" href="./additem.css">
+    <link rel="stylesheet" href="./managementitem.css">
 </head>
 
 <body>
     <div class="form-container">
         <h1>商品登録</h1>
-        <form action="addlogic.php" method="post" enctype="multipart/form-data">
+        <form action="managementlogic.php" method="post" enctype="multipart/form-data">
             <label for="name">商品名</label>
             <input type="text" name="name" id="name" maxlength="32" required>
 
@@ -30,7 +30,7 @@
     </div>
     <div class="form-container">
         <h1>カテゴリー登録</h1>
-        <form action="addlogic2.php" method="post" enctype="multipart/form-data">
+        <form action="managementlogic2.php" method="post" enctype="multipart/form-data">
             <label for="categoryId">カテゴリーid</label>
             <input type="number" name="categoryId" id="categoryId" required>
             <label for="categoryName">カテゴリー名前</label>

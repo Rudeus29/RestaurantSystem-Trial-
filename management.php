@@ -22,7 +22,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>管理画面 - 注文一覧</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css?v=<?= filemtime(__DIR__ . '/style.css') ?>">>
 </head>
 <body>
 
@@ -40,11 +40,9 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <form action="reset_db.php" method="POST" onsubmit="return confirm('sOrderテーブル、sManagementテーブルをTRUNCATEしてリセットします。本当によろしいですか？');" style="display: inline;">
                 <button type="submit" class="btn btn-red" style="font-size: 0.9em; padding: 5px 10px;">初期状態にリセット</button>
             </form>
-        <div class="container">
-        <a href="additem.php" class="btn brand">
-        <button>商品を追加する</button>
+        <a href="managementitem.php" class="btn brand">
+        <button class="btn btn-blue" style="font-size: 0.9em; padding: 5px 10px;" >商品を追加する</button>
         </a>
-        </div>
     </div>
     
     <table>

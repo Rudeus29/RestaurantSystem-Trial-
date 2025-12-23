@@ -8,8 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 try {
-    // 外部キー制約がある場合を考慮して、念のためチェックを無効化してTruncateする
-    // 今回の構成では単純なTRUNCATEで良いかもしれないが、安全策をとる
     $pdo->query("SET FOREIGN_KEY_CHECKS = 0");
 
     $pdo->query("TRUNCATE TABLE sOrder");
