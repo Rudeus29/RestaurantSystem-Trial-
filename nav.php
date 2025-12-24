@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="./style.css">
 <ul>
     <li><a href="index.php">Home</a></li>

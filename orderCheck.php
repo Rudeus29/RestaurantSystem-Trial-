@@ -8,7 +8,6 @@ session_start();
 
 $orders = $_SESSION["cart"];
 $ordername = array_keys($orders);
-echo $_SESSION["tableNo"];
 $x = 0;
 ?>
 <table>

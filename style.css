@@ -322,3 +322,17 @@ tr:hover {
 .btn-checkout:hover {
   background-color: #1a252f;
 }
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section img{
+  width: 100%;
+  max-width: 420px;     /* optional: prevents huge images on PC */
+  height: auto;
+  object-fit: cover;    /* keeps it nice if you set a fixed height */
+  border-radius: 10px;  /* optional */
+}

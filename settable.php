@@ -9,7 +9,6 @@ if (!$tableNo || $tableNo <= 0) {
 
 $_SESSION['tableNo'] = $tableNo;
 
-
 header("Location: index.php");
 exit;
 ?>
