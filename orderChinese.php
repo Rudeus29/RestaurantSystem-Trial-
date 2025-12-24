@@ -24,7 +24,7 @@ foreach ($items as $item) {
     echo '<section>';
     echo '<img src="./upfiles/' . $filename . '" alt="">';
     echo '<div>';
-    echo '<h2>' . $item["name"] . '</h2>';
+    echo '<h3>' . $item["name"] . '</h3>';
     echo '<p>' . $item["price"] . '</p>';
     echo '</div>';
     echo '<button type="button" class="minus" data-id="' . $id . '" data-name="' . htmlspecialchars($name) . '">➖️</button>';

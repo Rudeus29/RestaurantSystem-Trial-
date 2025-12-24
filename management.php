@@ -33,7 +33,8 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div style="margin-bottom: 20px; padding: 10px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 5px;">
         <strong>お客様テーブルに置ける表示:</strong>
         <?php for($i=1; $i<=5; $i++): ?>
-            <a href="index.php?tableNo=<?php echo $i; ?>" class="btn" style="margin: 0 5px; padding: 5px 10px; font-size: 0.9em;">Table <?php echo $i; ?></a>
+                    <a href="settable.php?tableNo=<?php echo $i; ?>" class="btn"
+                    style="margin: 0 5px; padding: 5px 10px; font-size: 0.9em;">Table <?php echo $i; ?></a>
         <?php endfor; ?>
         
         <div style="margin-top: 15px; border-top: 1px dashed #ccc; padding-top: 10px;">
