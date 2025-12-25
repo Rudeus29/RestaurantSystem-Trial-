@@ -1,9 +1,6 @@
 <?php
 require_once 'pdo.php';
 
-// 注文一覧取得
-// 最新の注文が上に来るように降順で取得
-// 合計金額も計算して取得
 $sql = "
     SELECT m.*, SUM(i.price * o.amount) as totalAmount
     FROM sManagement m
@@ -22,14 +19,13 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>管理画面 - 注文一覧</title>
-    <link rel="stylesheet" href="./style.css?v=<?= filemtime(__DIR__ . '/style.css') ?>">>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
 <div class="container">
     <h1>注文管理一覧</h1>
     
-    <!-- Dev Links -->
     <div style="margin-bottom: 20px; padding: 10px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 5px;">
         <strong>お客様テーブルに置ける表示:</strong>
         <?php for($i=1; $i<=5; $i++): ?>

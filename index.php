@@ -50,5 +50,9 @@ $currentTotal = $totalResult['total'] ? $totalResult['total'] : 0;
             <ul id="nav-mobile" class="right hide-on-small-and-down">
                 <li><a href="menu.php?categoryId=1" class="btn brand">Order Food</a></li>
             </ul>
-        </div>
+        </div>  
     </nav>
+    <div>
+        <h3>Current Order</h3>
+    </div>
+</body>
