@@ -48,7 +48,7 @@ $currentTotal = $totalResult['total'] ? $totalResult['total'] : 0;
         <a class="black-text left">Table <?php echo htmlspecialchars($tableNo); ?></a>
             <a href="#" class="brand-logo brand-text center">Sky Restaurant</a>
             <ul id="nav-mobile" class="right hide-on-small-and-down">
-                <li><a href="orderSpecials.php" class="btn brand">Order Food</a></li>
+                <li><a href="menu.php?categoryId=1" class="btn brand">Order Food</a></li>
             </ul>
         </div>
     </nav>

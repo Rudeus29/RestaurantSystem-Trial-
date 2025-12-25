@@ -7,9 +7,11 @@ if (!isset($_SESSION['cart'])) {
 }
 
 $tableNo = isset($_GET['tableNo']) ? (int) $_GET['tableNo'] : 1;
+$categoryId = $_GET['categoryId'];
 
-$sqlItem = "SELECT * FROM sitem WHERE category = 6 ORDER BY id ASC";
+$sqlItem = "SELECT * FROM sitem WHERE category = :categoryId ORDER BY id ASC";
 $stmtItem = $pdo->prepare($sqlItem);
+$stmtItem->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
 $stmtItem->execute();
 $items = $stmtItem->fetchAll(PDO::FETCH_ASSOC);
 
@@ -25,8 +27,8 @@ echo '<!doctype html>
 
 include "nav.php";
 foreach ($items as $item) {
-    $name = (string)$item['name'];
-    $id = (int)$item["id"];
+    $name = (string) $item['name'];
+    $id = (int) $item["id"];
     $qty = $_SESSION['cart'][$id]['amount'] ?? 0;
     $filename = $name . ".jpg";
     echo '<section>';
@@ -36,8 +38,8 @@ foreach ($items as $item) {
     echo '<p>' . $item["price"] . '</p>';
     echo '</div>';
     echo '<button type="button" class="minus" data-id="' . $id . '" data-name="' . htmlspecialchars($name) . '">➖️</button>';
-    echo '<span class="qty">' . (int)$qty . '</span>';
-    echo '<button type="button" class="plus"  data-id="' . $id . '" data-name="' . htmlspecialchars($name) . '">➕️</button>';   
+    echo '<span class="qty">' . (int) $qty . '</span>';
+    echo '<button type="button" class="plus"  data-id="' . $id . '" data-name="' . htmlspecialchars($name) . '">➕️</button>';
 
     echo '</section>';
 }

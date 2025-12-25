@@ -26,7 +26,7 @@
         <div class="container">
             <a href="#" class="brand-logo brand-text center">Sky Restaurant</a>
             <ul id="nav-mobile" class="right hide-on-small-and-down">
-                <li><a href="orderSpecials.php" class="btn brand">Order Food</a></li>
+                <li><a href="menu.php" class="btn brand">Order Food</a></li>
             </ul>
         </div>
     </nav>

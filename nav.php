@@ -15,7 +15,7 @@ $categories = $stmtCategory->fetchAll(PDO::FETCH_ASSOC);
     <li><a href="index.php">Home</a></li>
 <?php
 foreach ($categories as $category) { ?>
-    <li><a href="order<?php echo trim($category['categoryName']); ?>.php"><?php echo $category['categoryName']; ?></a>
+    <li><a href="menu.php?categoryId=<?= $category['categoryId'] ?>"><?php echo $category['categoryName']; ?></a>
     </li>
 <?php } ?>
 ?>
