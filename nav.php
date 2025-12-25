@@ -1,15 +1,24 @@
+<?php
+require_once("pdo.php");
+$sqlCategory = "SELECT * FROM sCategory WHERE state = 1 ORDER BY categoryId ASC";
+$stmtCategory = $pdo->prepare($sqlCategory);
+$stmtCategory->execute();
+$categories = $stmtCategory->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="./style.css">
 <ul>
     <li><a href="index.php">Home</a></li>
-    <li><a href="orderSpecials.php">Specials</a></li>
-    <li><a href="orderChinese.php">Chinese</a></li>
-    <li><a href="orderThai.php">Thai</a></li>
-    <li><a href="orderBBQ.php">BBQ</a></li>
-    <li><a href="orderDrinks.php">Drinks</a></li>
-    <li><a href="orderDessert.php">Dessert</a></li>
+<?php
+foreach ($categories as $category) { ?>
+    <li><a href="order<?php echo trim($category['categoryName']); ?>.php"><?php echo $category['categoryName']; ?></a>
+    </li>
+<?php } ?>
+?>
     <li><a href="orderCheck.php">Order</a></li>
     <li><a href="management.php">Management</a></li>
 </ul>
