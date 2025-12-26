@@ -380,3 +380,16 @@ section img{
   text-align: center;    
   white-space: nowrap;  
 }
+.order-check{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}

@@ -99,7 +99,7 @@ $currentTotal = $totalResult['total'] ? $totalResult['total'] : 0;
             </tbody>
         </table>
         </div>
-    <a href="menu.php?categoryId=1" class="order">Order Food</a>
+    <a href="menu.php?categoryId=1" class="order">注文する</a>
     <div class="footer-bar">
         <?php if (empty($orders)) { ?>
             現在の合計金額: ¥<?php echo number_format(0);

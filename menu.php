@@ -20,7 +20,7 @@ echo '<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./style.css>">
+<link rel="stylesheet" href="./style.css?v=<?= filemtime(__DIR__ . "/style.css") ?>"
 <script src="script.js" defer></script>
 </head>
 <body>';
@@ -40,8 +40,8 @@ foreach ($items as $item) {
     echo '<button type="button" class="minus" data-id="' . $id . '" data-name="' . htmlspecialchars($name) . '">➖️</button>';
     echo '<span class="qty">' . (int) $qty . '</span>';
     echo '<button type="button" class="plus"  data-id="' . $id . '" data-name="' . htmlspecialchars($name) . '">➕️</button>';
-
     echo '</section>';
 }
+echo '<a href="ordercheck.php" class="order-check">カート</a>';
 echo '</body></html>';
 ?>
