@@ -17,7 +17,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':tableNo', $tableNo, PDO::PARAM_STR);
 $stmt->execute();
 $stmtOrder = $stmt->fetchAll(PDO::FETCH_ASSOC);
-if (!empty($stmtOrder)) {
+if (!empty($stmtOrder) || $stmtOrder[0]["state"] == 2) {
 
     $orderNo = $stmtOrder[0]["orderNo"];
     $total = $stmtOrder[0]["totalAmount"];
@@ -80,7 +80,7 @@ $currentTotal = $totalResult['total'] ? $totalResult['total'] : 0;
             </thead>
             <tbody>
     <?php
-                if (empty($orders)) { ?>
+    if (empty($orders) || $stmtOrder[0]["state"] == 2) { ?>
                     <tr>
                         <td colspan="4" style="text-align:center; padding:16px;">現在の注文はありません</td>
                     </tr>
