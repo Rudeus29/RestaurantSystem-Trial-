@@ -172,14 +172,12 @@ tr:hover {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-  .item-card {
+@media (max-width: 360px) {
+.item-card {
     width: calc(50% - 10px);
-    /* 2 items per row on mobile */
-  }
+}
 }
 
-/* Modal Styles */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -335,4 +333,50 @@ section img{
   height: auto;
   object-fit: cover;    /* keeps it nice if you set a fixed height */
   border-radius: 10px;  /* optional */
+}
+
+.nav-header{
+  background :white;
+  height: 64px;
+}
+.nav-container{
+  position: relative;
+  height: 64px;
+  padding: 0 12px;
+}
+.nav-center{
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.table-no {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+.order{
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.order-table th:first-child,
+.order-table td:first-child{
+  width: 48px;
+  text-align: center;    
+  white-space: nowrap;  
 }
