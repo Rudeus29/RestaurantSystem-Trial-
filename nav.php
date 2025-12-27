@@ -19,7 +19,6 @@ foreach ($categories as $category) { ?>
     </li>
 <?php } ?>
 ?>
-    <li><a href="management.php">Management</a></li>
 </ul>
 
 </html>

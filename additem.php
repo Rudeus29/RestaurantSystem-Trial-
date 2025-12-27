@@ -9,6 +9,7 @@
 </head>
 
 <body>
+<a href="management.php" class="management">管理画面</a>
 <h1>商品登録</h1>
     <div class="menu">
         <div class="menu-content">
