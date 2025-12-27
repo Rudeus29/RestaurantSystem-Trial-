@@ -9,13 +9,14 @@
 </head>
 
 <body>
+<h1>商品登録</h1>
     <div class="menu">
-        <div class="menu-img">
-            <label for="postFile">画像</label>
-            <input type="file" name="postFile" id="postFile" accept=".jpg, image/jpeg" required>
-        </div>
         <div class="menu-content">
             <form class="menu-form" method="POST" action="managementlogic.php" enctype="multipart/form-data">
+            <div class="menu-img-add">
+            <label for="postFile">画像</label>
+            <input type="file" name="postFile" id="postFile" accept=".jpg, image/jpeg" required>
+            </div>
                 <div class="field">
                     <label class="field-label" for="state">State</label>
                     <input class="field-input" type="text" name="state" id="state">
