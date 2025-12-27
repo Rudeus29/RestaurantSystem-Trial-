@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>管理画面 - 注文一覧</title>
+    <title>商品登録</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 

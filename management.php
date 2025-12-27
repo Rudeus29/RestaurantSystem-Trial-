@@ -38,7 +38,10 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <button type="submit" class="btn btn-red" style="font-size: 0.9em; padding: 5px 10px;">初期状態にリセット</button>
             </form>
         <a href="managementitem.php" class="btn brand">
-        <button class="btn btn-blue" style="font-size: 0.9em; padding: 5px 10px;" >商品を追加する</button>
+        <button class="btn btn-blue" style="font-size: 0.9em; padding: 5px 10px;" >商品の編集</button>
+        </a>
+        <a href="managementcat.php" class="btn brand">
+        <button class="btn btn-blue" style="font-size: 0.9em; padding: 5px 10px;" >カテゴリーの編集</button>
         </a>
     </div>
     

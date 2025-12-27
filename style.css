@@ -49,7 +49,6 @@ h2 {
   color: #444;
 }
 
-/* Category Section */
 .category-section {
   margin-bottom: 30px;
 }
@@ -62,7 +61,6 @@ h2 {
   margin-bottom: 15px;
 }
 
-/* Item Grid */
 .item-list {
   display: flex;
   flex-wrap: wrap;
@@ -74,7 +72,6 @@ h2 {
   border-radius: 8px;
   padding: 15px;
   width: calc(33.333% - 15px);
-  /* 3 items per row */
   box-sizing: border-box;
   text-align: center;
   cursor: pointer;
@@ -103,7 +100,6 @@ h2 {
   font-weight: bold;
 }
 
-/* Footer / Total Area */
 .footer-bar {
   position: fixed;
   bottom: 0;
@@ -117,7 +113,6 @@ h2 {
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Management Table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -130,7 +125,6 @@ td {
   padding: 12px;
   text-align: left;
   white-space: nowrap;
-  /* Prevent wrapping generally */
 }
 
 th {
@@ -153,14 +147,12 @@ tr:hover {
   font-size: 1rem;
   cursor: pointer;
   font-family: inherit;
-  /* Ensure font matches if used on <button> */
 }
 
 .btn:hover {
   background-color: #2980b9;
 }
 
-/* Red Button Variant */
 .btn-red {
   background-color: #e74c3c;
 }
@@ -174,7 +166,7 @@ tr:hover {
   background:#e24b4b; 
   color:white; 
 }
-/* Responsive */
+
 @media (max-width: 360px) {
 .item-card {
     width: calc(50% - 10px);
@@ -252,7 +244,6 @@ tr:hover {
   background-color: #c0392b;
 }
 
-/* Quantity Selector */
 .quantity-selector {
   margin: 15px 0;
 }
@@ -285,7 +276,6 @@ tr:hover {
   border-color: #3498db;
 }
 
-/* Status Styles */
 .status-eating {
   color: #e67e22;
   font-weight: bold;
@@ -308,7 +298,6 @@ tr:hover {
   color: #7f8c8d;
 }
 
-/* Checkout Button */
 .btn-checkout {
   display: inline-block;
   padding: 6px 12px;
@@ -332,10 +321,10 @@ img{
 
 section img{
   width: 100%;
-  max-width: 420px;     /* optional: prevents huge images on PC */
+  max-width: 420px;
   height: auto;
-  object-fit: cover;    /* keeps it nice if you set a fixed height */
-  border-radius: 10px;  /* optional */
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .nav-header{
@@ -432,13 +421,13 @@ section img{
   display:flex;
   gap:16px;
   align-items:stretch;
-  flex: 1;                /* let it share the row */
+  flex: 1;
   min-width: 0
 }
 
 .field{
   display:grid;
-  grid-template-columns: 90px 1fr;     /* label left, input right */
+  grid-template-columns: 90px 1fr;
   align-items:center;
   gap:10px;
 }
@@ -462,8 +451,8 @@ section img{
 }
 
 .menu-delete{
-  margin-left: auto;      /* push to far right */
-  flex: 0 0 120px;        /* keep its width */
+  margin-left: auto;
+  flex: 0 0 120px;     
   align-self: center;
 }
 
@@ -508,21 +497,7 @@ section img{
   font-weight: 600;
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
-.management-index{
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 9999;
 
-  padding: 10px 14px;
-  border-radius: 12px;
-  text-decoration: none;
-
-  background: #2d6cdf;
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
 .editable-img{
   position: relative;
   width: 220px; 
@@ -560,4 +535,29 @@ section img{
 
 .editable-img:hover .img-overlay{
   opacity: 1;
+}
+
+.menu-grid {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 700px) {
+  .menu-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1100px) {
+  .menu-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.menu-photo{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
 }

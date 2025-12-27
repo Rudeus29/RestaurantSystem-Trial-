@@ -5,20 +5,27 @@
 include "nav.php";
 require_once("pdo.php");
 session_start();
+$orders = $_SESSION["cart"] ?? [];
 
-$orders = $_SESSION["cart"];
+foreach ($orders as $order) {
+    $key = $order["id"];
+    if (!isset($order["amount"]) || (int) $order["amount"] <= 0) {
+        unset($orders[$key]);
+    }
+}
+
 $ordername = array_keys($orders);
-$x = 0;
+
 ?>
 <table>
-    <tr>
+<tr>
 <th>name</th>
 <th>quantity</th>
 </tr>
-<tr><?php foreach($orders as $order){?>
+<tr>
+    <?php foreach ($orders as $order) { ?>
     <td><?php echo $order["name"]; ?></td>
     <td><?php echo $order["amount"] . "</br>"; ?></td>
-    <?php $x+=1;?>
 </tr>
 <?php } ?>
 </table>

@@ -12,7 +12,7 @@ $categories = $stmtCategory->fetchAll(PDO::FETCH_ASSOC);
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="./style.css">
 <ul>
-    <li><a href="index.php">Home</a></li>
+    <li><a href="index.php">ホーム</a></li>
 <?php
 foreach ($categories as $category) { ?>
     <li><a href="menu.php?categoryId=<?= $category['categoryId'] ?>"><?php echo $category['categoryName']; ?></a>
