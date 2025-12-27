@@ -170,7 +170,10 @@ tr:hover {
 .btn-red:hover {
   background-color: #c0392b;
 }
-
+.btn-delete{
+  background:#e24b4b; 
+  color:white; 
+}
 /* Responsive */
 @media (max-width: 360px) {
 .item-card {
@@ -392,4 +395,115 @@ section img{
   color: white;
   text-decoration: none;
   font-weight: 600;
+}
+
+.menu{
+  display:flex;
+  gap:16px;
+  padding:16px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  margin-bottom:16px;
+  background:#fff;
+  align-items: stretch;
+}
+
+.menu-img{
+  width:220px;                  /* make image box bigger */
+  height:220px;                 /* controls the “range” */
+  flex:0 0 auto;
+}
+.menu-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:10px;
+  display:block;
+}
+.menu-content{
+  flex:1;
+  height:220px;                 /* match image height */
+  display:flex;
+  gap:12px;
+}
+
+.menu-form{
+  flex:1;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+.field{
+  display:grid;
+  grid-template-columns: 90px 1fr;     /* label left, input right */
+  align-items:center;
+  gap:10px;
+}
+
+.field-label{
+  font-size:12px;
+  opacity:0.8;
+}
+
+.field-input{
+  width:100%;
+  box-sizing:border-box;
+  padding:6px 8px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  height:32px; 
+}
+
+.field-value{
+  font-weight:600;
+}
+
+.menu-delete{
+  display:flex;
+  align-items:center;   /* vertical center */
+  justify-content:center;
+  width:120px;
+}
+
+.btn{
+  padding:10px 14px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+}
+
+.add-menu-btn{
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+
+  background: #2d6cdf;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.add-menu-btn:hover{
+  filter: brightness(0.95);
+}
+.management{
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 9999;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+
+  background: #2d6cdf;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }

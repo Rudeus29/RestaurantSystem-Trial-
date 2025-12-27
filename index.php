@@ -17,7 +17,11 @@ $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':tableNo', $tableNo, PDO::PARAM_STR);
 $stmt->execute();
 $stmtOrder = $stmt->fetchAll(PDO::FETCH_ASSOC);
-if (!empty($stmtOrder) || $stmtOrder[0]["state"] == 2) {
+
+$latest = $stmtOrder[0] ?? null;
+$latestState = (int) ($latest['state'] ?? 2);
+
+if ($latest !== null && $latestState != 2) {
 
     $orderNo = $stmtOrder[0]["orderNo"];
     $total = $stmtOrder[0]["totalAmount"];

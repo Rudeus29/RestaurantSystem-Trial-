@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2025 at 02:58 PM
+-- Generation Time: Dec 27, 2025 at 07:20 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -49,25 +49,10 @@ INSERT INTO `scategory` (`id`, `state`, `categoryId`, `categoryName`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `smanagement`
+-- Table structure for table `sitem`
 --
 
-CREATE TABLE `smanagement` (
-  `id` int(11) NOT NULL,
-  `state` int(11) NOT NULL,
-  `orderNo` int(11) NOT NULL,
-  `tableNo` int(11) NOT NULL,
-  `dateA` datetime NOT NULL,
-  `dateB` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `smenu`
---
-
-CREATE TABLE `smenu` (
+CREATE TABLE `sitem` (
   `id` int(11) NOT NULL,
   `state` int(11) DEFAULT 1,
   `category` int(11) NOT NULL,
@@ -76,10 +61,10 @@ CREATE TABLE `smenu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `smenu`
+-- Dumping data for table `sitem`
 --
 
-INSERT INTO `smenu` (`id`, `state`, `category`, `name`, `price`) VALUES
+INSERT INTO `sitem` (`id`, `state`, `category`, `name`, `price`) VALUES
 (1, 1, 2, 'Fried Rice', 4500),
 (2, 1, 3, 'Thai spicy Prawn', 6000),
 (3, 1, 4, 'Chicken Sautee', 5000),
@@ -125,6 +110,28 @@ INSERT INTO `smenu` (`id`, `state`, `category`, `name`, `price`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `smanagement`
+--
+
+CREATE TABLE `smanagement` (
+  `id` int(11) NOT NULL,
+  `state` int(11) NOT NULL DEFAULT 1,
+  `orderNo` varchar(50) NOT NULL,
+  `tableNo` int(11) NOT NULL,
+  `dateA` datetime NOT NULL DEFAULT current_timestamp(),
+  `dateB` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `smanagement`
+--
+
+INSERT INTO `smanagement` (`id`, `state`, `orderNo`, `tableNo`, `dateA`, `dateB`) VALUES
+(1, 2, '20251227151955-9436', 1, '2025-12-27 15:19:55', '2025-12-27 15:20:04');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sorder`
 --
 
@@ -141,12 +148,8 @@ CREATE TABLE `sorder` (
 --
 
 INSERT INTO `sorder` (`id`, `state`, `orderNo`, `itemNo`, `amount`) VALUES
-(1, 0, '20251219225653', 1, 1),
-(2, 0, '20251219225653', 2, 1),
-(3, 0, '20251219225653', 4, 1),
-(4, 0, '20251219225653', 32, 1),
-(5, 0, '20251219225653', 7, 1),
-(6, 0, '20251219225653', 8, 1);
+(1, 0, '20251227151955-9436', 39, 2),
+(2, 0, '20251227151955-9436', 40, 1);
 
 --
 -- Indexes for dumped tables
@@ -159,15 +162,15 @@ ALTER TABLE `scategory`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `smanagement`
+-- Indexes for table `sitem`
 --
-ALTER TABLE `smanagement`
+ALTER TABLE `sitem`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `smenu`
+-- Indexes for table `smanagement`
 --
-ALTER TABLE `smenu`
+ALTER TABLE `smanagement`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -187,22 +190,22 @@ ALTER TABLE `scategory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `sitem`
+--
+ALTER TABLE `sitem`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
 -- AUTO_INCREMENT for table `smanagement`
 --
 ALTER TABLE `smanagement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `smenu`
---
-ALTER TABLE `smenu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sorder`
 --
 ALTER TABLE `sorder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
