@@ -1,7 +1,9 @@
 <?php
 require_once 'pdo.php';
 session_start();
-
+if (!isset($_SESSION["tableNo"])) {
+    $_SESSION['tableNo'] = 1;
+}
 $tableNo = isset($_SESSION['tableNo']) ? (int) $_SESSION['tableNo'] : 1;
 
 $sql = "
