@@ -18,7 +18,6 @@ foreach ($categories as $category) { ?>
     <li><a href="menu.php?categoryId=<?= $category['categoryId'] ?>"><?php echo $category['categoryName']; ?></a>
     </li>
 <?php } ?>
-?>
 </ul>
 
 </html>
