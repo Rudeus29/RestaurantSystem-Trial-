@@ -19,7 +19,7 @@ $items = $sqlitem->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-    <a href="management.php" class="management">管理画面</a>
+    <a href="management.php?mode=9'" class="management">管理画面</a>
     <a href="addcategory.php" class="add-menu-btn">✙Add Category</a>
     <h2 class="center">カテゴリー覧</h2>
     <div class="container">

@@ -65,7 +65,7 @@ $currentTotal = $totalResult['total'] ? $totalResult['total'] : 0;
 </head>
 
 <body class="grey lighten-3">
-<a href="management.php" class="management">管理画面</a>
+<a href="management.php?mode=9" class="management">管理画面</a>
     <nav class="nav-header">
         <div class="nav-container">
             <div class="nav-center">

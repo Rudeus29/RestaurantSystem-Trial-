@@ -1,6 +1,24 @@
 <?php
 require_once 'pdo.php';
-
+if ($_GET["mode"] == 9) {
+    $sql = "
+    SELECT m.*, SUM(i.price * o.amount) as totalAmount
+    FROM sManagement m
+    LEFT JOIN sOrder o ON m.orderNo = o.orderNo
+    LEFT JOIN sitem i ON o.itemNo = i.id
+    GROUP BY m.orderNo
+    ORDER BY m.state ASC, m.dateB ASC
+";
+} else if (($_GET["mode"] == 10)) {
+    $sql = "
+    SELECT m.*, SUM(i.price * o.amount) as totalAmount
+    FROM sManagement m
+    LEFT JOIN sOrder o ON m.orderNo = o.orderNo
+    LEFT JOIN sitem i ON o.itemNo = i.id
+    GROUP BY m.orderNo
+    ORDER BY m.state ASC, m.dateB DESC
+";
+} else {
 $sql = "
     SELECT m.*, SUM(i.price * o.amount) as totalAmount
     FROM sManagement m
@@ -9,6 +27,7 @@ $sql = "
     GROUP BY m.orderNo
     ORDER BY m.state ASC, m.dateB DESC
 ";
+}
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -52,7 +71,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <th>テーブル▲▼</th>
                 <th>注文番号▲▼</th>
                 <th>状態▲▼</th>
-                <th>金額▲▼</th>
+                <th>金額<a href="./management.php?mode=9">▲</a><a href="./management.php?mode=10">▼</a></th>
                 <th>操作</th>
             </tr>
         </thead>

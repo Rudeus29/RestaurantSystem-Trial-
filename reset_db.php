@@ -21,5 +21,5 @@ try {
 }
 
 // 管理画面に戻る
-header('Location: management.php');
+header('Location: management.php?mode=9');
 exit;

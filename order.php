@@ -85,7 +85,7 @@ foreach ($details as $d) {
         </table>
 
         <div style="margin-top: 20px;">
-            <a href="management.php" class="btn">一覧に戻る</a>
+            <a href="management.php?mode=9" class="btn">一覧に戻る</a>
         </div>
     </div>
 
