@@ -20,7 +20,7 @@ $items = $sqlitem->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-<a href="management.php?mode=9'" class="management">管理画面</a>
+<a href="management.php?mode=9" class="management">管理画面</a>
 <a href="additem.php" class="add-menu-btn">✙Add Menu</a>
 <h2 class="center">メニュー一覧</h2>
 <div class="container">
@@ -38,7 +38,7 @@ $items = $sqlitem->fetchAll(PDO::FETCH_ASSOC);
 
             <div class="menu-img editable-img">
             <img src="<?php echo htmlspecialchars($webPath); ?>?v=<?php echo $ver; ?>" alt="">
-                <label class="img-overlay" for="postFile-<?php echo $id; ?>">Choose file</label>
+                <label class="img-overlay" for="postFile-<?php echo $id; ?>">画像選択</label>
                 <input type="file" name="postFile" id="postFile-<?php echo $id; ?>" class="file-input"
                     accept=".jpg, image/jpeg">
             </div>

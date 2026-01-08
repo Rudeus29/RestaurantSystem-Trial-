@@ -11,11 +11,10 @@ if ($name === "" || $price === "" || $category === "") {
     exit("全ての項⽬を⼊⼒してください。");
 }
 
-if (!isset($_FILES["postFile"]) || $_FILES["postFile"]["error"] !== UPLOAD_ERR_OK) {
-    exit("ファイルのアップロードに失敗しました。");
-}
+if ($_FILES["postFile"]["error"] == UPLOAD_ERR_OK) {
 
-$fileTmp = $_FILES["postFile"]["tmp_name"];
+
+    $fileTmp = $_FILES["postFile"]["tmp_name"];
 
 $filetype = mime_content_type($fileTmp);
 
@@ -37,7 +36,7 @@ $savePath = $uploadDir . $filename;
 if (!move_uploaded_file($fileTmp, $savePath)) {
     exit("画像の保存に失敗しました。");
 }
-
+}
 $stmt = $pdo->prepare('
     UPDATE `sitem` SET
     state = :state,
