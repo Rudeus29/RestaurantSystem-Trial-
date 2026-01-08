@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <a href="management.php" class="management">管理画面</a>
+    <a href="management.php?mode=9" class="management">管理画面</a>
     <h1>カテゴリー登録</h1>
     <div class="menu">
         <div class="menu-content">

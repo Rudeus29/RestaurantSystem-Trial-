@@ -3,7 +3,7 @@ require_once 'pdo.php';
 
 // POSTリクエストのみ許可
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: management.php');
+    header('management.php?mode=9');
     exit;
 }
 
