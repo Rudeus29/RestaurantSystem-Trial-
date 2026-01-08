@@ -48,6 +48,6 @@ $stmt->bindValue(":category", $category, PDO::PARAM_STR);
 
 $stmt->execute();
 
-header("Location: management.php");
+header("management.php?mode=9");
 exit();
 ?>
